@@ -32,8 +32,8 @@ O Gerenciador de Licenças um aplicativo Windows Forms desenvolvido em C# e .NET
 
 > Interface do Aplicativo
 
-> ![img01.png](imgs/img01.png)
-> ![img02.png](imgs/img02.png)
+> ![img01.png](OfficeLicence/imgs/img01.png)
+> ![img02.png](OfficeLicence/imgs/img02.png)
 
 ## Exportação para Excel
 
