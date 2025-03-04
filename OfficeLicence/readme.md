@@ -1,6 +1,6 @@
 # Gerenciador de Licenças
 
-Descrição
+# Descrição
 
 O Gerenciador de Licenças um aplicativo Windows Forms desenvolvido em C# e .NET 8, projetado para facilitar o armazenamento e a gestão de licenças de software. Ele permite que o usuário adicione, visualize e exporte dados para um arquivo Excel (.xlsx).
 
