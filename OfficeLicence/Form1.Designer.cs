@@ -49,8 +49,16 @@ partial class ExtractorData
         textValidade = new MaterialSkin.Controls.MaterialTextBox2();
         materialButton2 = new MaterialSkin.Controls.MaterialButton();
         textCaminho = new MaterialSkin.Controls.MaterialTextBox2();
+        linkedin = new PictureBox();
+        instagram = new PictureBox();
+        facebook = new PictureBox();
+        github = new PictureBox();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         contextMenuStrip1.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)linkedin).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)instagram).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)facebook).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)github).BeginInit();
         SuspendLayout();
         // 
         // materialButton1
@@ -396,11 +404,59 @@ partial class ExtractorData
         textCaminho.UseSystemPasswordChar = false;
         textCaminho.Click += textCaminho_Click;
         // 
+        // linkedin
+        // 
+        linkedin.Image = (Image)resources.GetObject("linkedin.Image");
+        linkedin.Location = new Point(543, 551);
+        linkedin.Name = "linkedin";
+        linkedin.Size = new Size(23, 25);
+        linkedin.SizeMode = PictureBoxSizeMode.StretchImage;
+        linkedin.TabIndex = 19;
+        linkedin.TabStop = false;
+        linkedin.Click += linkedin_Click;
+        // 
+        // instagram
+        // 
+        instagram.Image = (Image)resources.GetObject("instagram.Image");
+        instagram.Location = new Point(572, 551);
+        instagram.Name = "instagram";
+        instagram.Size = new Size(22, 25);
+        instagram.SizeMode = PictureBoxSizeMode.StretchImage;
+        instagram.TabIndex = 20;
+        instagram.TabStop = false;
+        instagram.Click += instagram_Click;
+        // 
+        // facebook
+        // 
+        facebook.Image = (Image)resources.GetObject("facebook.Image");
+        facebook.Location = new Point(600, 551);
+        facebook.Name = "facebook";
+        facebook.Size = new Size(22, 25);
+        facebook.SizeMode = PictureBoxSizeMode.StretchImage;
+        facebook.TabIndex = 21;
+        facebook.TabStop = false;
+        facebook.Click += facebook_Click;
+        // 
+        // github
+        // 
+        github.Image = (Image)resources.GetObject("github.Image");
+        github.Location = new Point(628, 551);
+        github.Name = "github";
+        github.Size = new Size(22, 25);
+        github.SizeMode = PictureBoxSizeMode.StretchImage;
+        github.TabIndex = 22;
+        github.TabStop = false;
+        github.Click += github_Click;
+        // 
         // ExtractorData
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(821, 588);
+        Controls.Add(github);
+        Controls.Add(facebook);
+        Controls.Add(instagram);
+        Controls.Add(linkedin);
         Controls.Add(textCaminho);
         Controls.Add(materialButton2);
         Controls.Add(textValidade);
@@ -423,6 +479,10 @@ partial class ExtractorData
         Text = "Gerenciador de Licenças";
         ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
         contextMenuStrip1.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)linkedin).EndInit();
+        ((System.ComponentModel.ISupportInitialize)instagram).EndInit();
+        ((System.ComponentModel.ISupportInitialize)facebook).EndInit();
+        ((System.ComponentModel.ISupportInitialize)github).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -448,4 +508,8 @@ partial class ExtractorData
     private MaterialSkin.Controls.MaterialTextBox2 textValidade;
     private MaterialSkin.Controls.MaterialButton materialButton2;
     private MaterialSkin.Controls.MaterialTextBox2 textCaminho;
+    private PictureBox linkedin;
+    private PictureBox instagram;
+    private PictureBox facebook;
+    private PictureBox github;
 }

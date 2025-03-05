@@ -3,6 +3,7 @@ using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using static OfficeLicence.Services;
 
@@ -155,7 +156,7 @@ namespace OfficeLicence
                     // Obtém a pasta do arquivo Excel e cria o caminho para config.txt
                     string pastaArquivo = Path.GetDirectoryName(Application.ExecutablePath);
                     string caminhoConfig = Path.Combine(pastaArquivo, "config.txt");
-                    
+
                     // Salva o caminho do Excel no config.txt
                     File.WriteAllText(caminhoConfig, caminhoArquivo);
 
@@ -170,11 +171,45 @@ namespace OfficeLicence
             }
         }
 
-
-
         private void textCaminho_Click(object sender, EventArgs e)
         {
             textCaminho.ReadOnly = true;
+        }
+
+        private void linkedin_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://www.linkedin.com/in/edinaelson-g-037633124/",
+                UseShellExecute = true
+            });
+        }
+
+        private void instagram_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://www.instagram.com/edi_cifer/",
+                UseShellExecute = true
+            });
+        }
+
+        private void facebook_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://www.facebook.com/edinaelson.santos.5/",
+                UseShellExecute = true
+            });
+        }
+
+        private void github_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/Edinaelson",
+                UseShellExecute = true
+            });
         }
     }
 }

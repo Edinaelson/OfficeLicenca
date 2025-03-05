@@ -121,6 +121,54 @@
     <value>59, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="linkedin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DQAACw0B7QfALAAAASJJREFUSEvt1r1KA1EQhuFVYudPYWPnDdhYaRUrQVHvwt7bsPI6vAA7O0VSeQdW
+        SRBLsRAR/97P7JFhWM6w8UCK7AcPyc6ZOVOEwFZd5jJHGOO7kBEOEUaNTRf8xxBhmgZLCOMHnnGLV1Ob
+        Rhjb/IJNKNv4gD1vI4xtHqhgot/KnrcRxja/YQfKCb5gz9sI4wc+8ehq0wjjB85rF/Xzk6ld4QFnOMYp
+        7uDvkDB+YAHKMvR8//s0yS7WJl//sohr+HvC+IHc4pT1+jNlH/6eMH4gt1hnN1D9UoU6G7B3SBg/kFu8
+        hdT3jh6UJaR6EsYP5Bb3YXtXkOL/emFss+QW78H2riKlWxzGNsvMFpcSpmmohDAze/XRi1nJ5Vp6gC5z
+        lar6AUbFex8rTIIAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="instagram.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DwAACw8BkvkDpQAAAZJJREFUSEvt1kkuRUEYxfE7xwwjxoaagS7sAbEgzQp0iyASK9EsghmiGzDQnH+i
+        Eqmc73ZKYvBO8kteXjWfqld13WqQ/5Bx2ZVLeZHPluh7IYwdk07ZlCdxE3fxKBvSKhT9EDdRH+/SWJzt
+        LbHS3IPUbju/ixvY1bKsZN9tS5gr+dm5L4quZt9x4MI0bfOr7MmCDH3j84G8iRuTMHcYNyC5lmmJMiP0
+        cWOTMK4zWGkqOimnwgpwJlNCZqVu5WFcZ7C9hKJ3krffC23kUPL2JIzrjHkhrNS140TIorh2hHGdMSyk
+        7vDxlCIj4toRxnVGm8I8JEjRwlwZwkFy7TgWsiSuHWFcZ+wL4fRykPL2W5kQciR5exLGdQbXiXtKOL0c
+        JH5TsNJUdE6KXifwcEjFXSh6I25sEqbu8IDV8Hjkd+TAgc9sb9MjM516G9423KASziXMjrhBJWxJGP5Z
+        syVu4G9wx0elNrym8LriJuiDudakVSjOX+km6oI51qVT2BpeVzgUz+ImdrgZjGFs4/YO8sepqi/HSNFe
+        svnSaQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="facebook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAONJREFUSEvt1iHOwkAYhOGCQSIQXASNQkC4I5fAcQsUHnCcgCBgVnzJpB12dkNR
+        7Zs86tv5Eb9pMzbI9nCHd09usANbeqj+wC+uYFPDPtjUqA82NXKOsIYFzGAJF+A3Nn5c4gRTaHcGfmfj
+        xyU2oPr7D88hOsAL1DubGuVMIHqCepPY1CiHU/dgU6O2kh5QteHH37jS/7120xkorhXUbjoDh1P3YFOj
+        HE7dg02Ncjh1DzY1yuHUPdjUKIdT92BToxxO3YNNjXI4dQ+22k8fTt2Tok+f9GFW8+Ocuqcf3cLYoGqa
+        D655kDXmyFfYAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="github.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAdVJREFUSEvt1TtLXEEYxvE1ggYFCwVJTBTx0lonEVEMpEtQidY2Ft6LtKnyLZIQ
+        E9FKEAxBYiH4CWxSaWWKdILB+/3yfxYHXiZn9lxcJMU+8MM948w7O7NnzsmV8j+mCZNYwQYObumz2ibQ
+        iKLlCT7iAtcxLrGAZtwpfdhH1CSF7OENMmUaWkFU4SQ0dgqpopXeZVJHNRKv/Cn87X2GDnwxbVH0f/V7
+        Ydq07Q2ITVTxSrhoN7pRj/Lbvz1Qu8tD2PGfUTA6MlF3bxvSpB12vGpqJ4PRObUDnE6kSRf8GuMI5if8
+        AYvIku+wdZYRzCZsZ3mOLPFXrSdcMLoDbWexN1aaVMPWUe1g9Oy1naUGWVIHW+cQwWzBdpbXyJIB2Dq/
+        EYxuANtZ1qFzmSZV+AVb5weCeQfb2VlFoqcP0Xldg19DtYPR+/QM/iA5wgwG0QIbXQ/hG47hj1XNxyiY
+        ObgBw1gy16Iv8Ao2vTiB7WfNIjZ68e9AA7ZRi3mo8F+8R1Q+wJ9QdhG7Wpe3cK/FETUkSCv8SVWjH6ky
+        hiv8wUvE3dkP4E86ikzRS1zbawsWiuujnyr1Sv3oGH3COeImPsVXPMpfFSkqptdmRf7q35Qh6Vkv5b6S
+        y90ADl37pn2bBb4AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAMDAAAAEAIACoJQAAFgAAACgAAAAwAAAAYAAAAAEAIAAAAAAAACQAABMLAAATCwAAAAAAAAAA
