@@ -6,6 +6,8 @@ O Gerenciador de Licenças um aplicativo Windows Forms desenvolvido em C# e .NET
 
 ## Funcionalidades
 
+> Editar uma senha e ela ser aplicada para todos os e-mails correspondente
+
 > Interface simples e intuitiva.
 
 > Adição de novos registros de licença.

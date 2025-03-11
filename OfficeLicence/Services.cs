@@ -87,7 +87,7 @@ namespace OfficeLicence
                 dataTable.Columns.Add("Usuário");
                 dataTable.Columns.Add("Dispositivo");
                 dataTable.Columns.Add("Setor");
-                dataTable.Columns.Add("Licença"); //Usuario/Dispositivo/Setor/Licenca/password/validade
+                dataTable.Columns.Add("Licença");
                 dataTable.Columns.Add("Password");
                 dataTable.Columns.Add("Validade");
 

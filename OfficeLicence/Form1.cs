@@ -3,6 +3,7 @@ using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 using static OfficeLicence.Services;
@@ -12,18 +13,21 @@ namespace OfficeLicence
     public partial class ExtractorData : MaterialForm
     {
 
+        private Dictionary<string, string> senhaPorEmail = new Dictionary<string, string>();
+
         public ExtractorData()
         {
-            InitializeComponent();
 
+            InitializeComponent();
+       
             var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Blue400, Primary.Blue500,
-                Primary.Blue500, Accent.LightBlue200,
-                TextShade.WHITE
-            );
+                materialSkinManager.AddFormToManage(this);
+                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+                materialSkinManager.ColorScheme = new ColorScheme(
+                    Primary.Blue400, Primary.Blue500,
+                    Primary.Blue500, Accent.LightBlue200,
+                    TextShade.WHITE
+                );
 
             if (File.Exists("config.txt"))
             {
@@ -74,13 +78,41 @@ namespace OfficeLicence
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.ReadOnly = false;
+            dataGridView1.AllowUserToAddRows = true;
+            dataGridView1.AllowUserToDeleteRows = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
+
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == dataGridView1.Columns["Password"].Index) // Apenas para a coluna de senha
+            {
+                string licenca = dataGridView1.Rows[e.RowIndex].Cells["Licença"].Value?.ToString();
+                string novaSenha = dataGridView1.Rows[e.RowIndex].Cells["Password"].Value?.ToString();
+
+                if (!string.IsNullOrWhiteSpace(licenca) && !string.IsNullOrWhiteSpace(novaSenha))
+                {
+                    // Atualiza todas as linhas no DataGridView
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        if (row.Cells["Licença"].Value?.ToString() == licenca)
+                        {
+                            row.Cells["Password"].Value = novaSenha; // Define a nova senha para todas as linhas da mesma licença
+                        }
+                    }
+
+                    // Agora salva a alteração no Excel
+                    SalvarAlteracoesNoExcel(licenca, novaSenha);
+                }
+            }
+        }
+
+        private void SalvarAlteracoesNoExcel(string licenca, string novaSenha)
+        {
             try
             {
-                string filePath = Services.LerCaminhoDoArquivo(); // Obtém o caminho automaticamente
+                string filePath = Services.LerCaminhoDoArquivo(); // Obtém o caminho do arquivo
                 if (string.IsNullOrEmpty(filePath))
                 {
                     MessageBox.Show("Erro: Caminho da planilha não encontrado.");
@@ -91,17 +123,16 @@ namespace OfficeLicence
                 {
                     var planilha = workbook.Worksheet("licenca");
 
-                    // Obtém a linha e a coluna editada
-                    int linhaEditada = e.RowIndex + 2;
-                    int colunaEditada = e.ColumnIndex + 1;
+                    // Percorre todas as linhas da planilha e altera a senha
+                    foreach (var row in planilha.RangeUsed().RowsUsed())
+                    {
+                        if (row.Cell(4).GetValue<string>() == licenca) // Coluna 4 = "Licença"
+                        {
+                            row.Cell(5).Value = novaSenha; // Coluna 5 = "Password"
+                        }
+                    }
 
-                    // Obtém o novo valor da célula
-                    var novoValor = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString() ?? "";
-
-                    // Atualiza a célula no Excel
-                    planilha.Cell(linhaEditada, colunaEditada).Value = novoValor;
-
-                    // Salva as mudanças
+                    // Salva as alterações no Excel
                     workbook.Save();
                 }
             }
@@ -113,8 +144,41 @@ namespace OfficeLicence
 
         private void AtualizarDataGridView()
         {
-            dataGridView1.DataSource = null; // Limpa os dados anteriores
-            dataGridView1.DataSource = Services.ObterDadosExcel(); // Recarrega os dados
+            var dadosOriginais = Services.ObterDadosExcel();
+
+            if (dadosOriginais == null || dadosOriginais.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum dado encontrado na planilha.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dataGridView1.DataSource = null;
+                return;
+            }
+
+            // Atualiza todas as senhas para a mesma da última ocorrência
+            var senhaPorEmail = new Dictionary<string, string>();
+
+            foreach (DataRow row in dadosOriginais.Rows)
+            {
+                string licenca = row["Licença"].ToString();
+                string password = row["Password"].ToString();
+
+                if (!string.IsNullOrWhiteSpace(licenca))
+                {
+                    senhaPorEmail[licenca] = password; // Mantém a última senha encontrada
+                }
+            }
+
+            // Atualiza todas as senhas no DataTable
+            foreach (DataRow row in dadosOriginais.Rows)
+            {
+                string licenca = row["Licença"].ToString();
+                if (!string.IsNullOrWhiteSpace(licenca) && senhaPorEmail.ContainsKey(licenca))
+                {
+                    row["Password"] = senhaPorEmail[licenca]; // Aplica a senha mais recente a todas as ocorrências
+                }
+            }
+
+            // Exibe os dados atualizados no DataGridView
+            dataGridView1.DataSource = dadosOriginais;
         }
 
         private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -171,6 +235,8 @@ namespace OfficeLicence
             }
         }
 
+        #region redes sociais
+
         private void textCaminho_Click(object sender, EventArgs e)
         {
             textCaminho.ReadOnly = true;
@@ -212,5 +278,7 @@ namespace OfficeLicence
             });
         }
     }
+
+    #endregion redes socias
 }
 
